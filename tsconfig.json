@@ -1,0 +1,19 @@
+{
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "__tests__/libs/math/index.test.js", "__tests__/libs/math/index.test.js", "__tests__/libs/math/index.test.js"],
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "target": "ES2019",
+    "strict": true,
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "module": "ESNext",
+
+    // Remix takes care of building everything in `remix build`.
+    "noEmit": true
+  }
+}

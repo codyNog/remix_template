@@ -1,0 +1,39 @@
+{
+  "Component template": {
+    "prefix": "component",
+    "body": [
+      "interface Props {",
+      "  // id: string",
+      "}",
+      "",
+      "export const ${TM_DIRECTORY/^.+\\/(.*)$/$1/} = ({}: Props): JSX.Element => {",
+      "  return ${3:(null$1)}",
+      "}",
+      ""
+    ]
+  },
+  "CustomHooks template": {
+    "prefix": "hooks",
+    "body": [
+      "import { useState, useCallback } from 'react';",
+      "",
+      "export const use${TM_DIRECTORY/^.+\\/(.*)$/$1/} = () => {",
+      "  const [state$1, setState$1] = useState('');",
+      "",
+      "  return { state$1, setState$1 };",
+      "};"
+    ]
+  },
+  "Storybook template": {
+    "prefix": "storybook",
+    "body": [
+      "import { storiesOf } from '@storybook/react'",
+      "",
+      "import ${TM_DIRECTORY/^.+\\/(.*)$/$1/} from './'",
+      "",
+      "storiesOf('${TM_DIRECTORY/^.+\\/(.*)\\/(.*)$/$1/}', module)",
+      "  .add('${1:${TM_DIRECTORY/^.+\\/(.*)$/$1/}}', () => <${1:${TM_DIRECTORY/^.+\\/(.*)$/$1/}} />)"
+    ],
+    "description": "Storybook template"
+  }
+}
